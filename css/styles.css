@@ -34,7 +34,6 @@ body {
     display: none;  /* Older Safari and Chromium */
 }
 
-/*TODO: CHANGE THIS TO AFFECT THE ENTIRE DOCUMENT OR JUST THE YPHRESIES PAGE*/
 h1 {
   font-size: 3rem;
   font-weight: 800;
@@ -1027,7 +1026,7 @@ text-align: center;
 
     html,
     body {
-      scroll-padding-top: 10px; 
+      scroll-padding-top: 30px; 
     }
 
     .home-img {
@@ -1095,8 +1094,25 @@ text-align: center;
       font-size: 1.2rem;
       padding: 5px;
     }
-
-    
+    /* Home Page */
+    .home {
+      flex-direction: column;
+      padding: 0;
+      height: 100vh;
+      min-height: 100vh;
+      overflow: hidden;
+      position: relative;
+    }
+    .home video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100vw;
+      object-fit: cover;
+      z-index: 0;
+      pointer-events: none;
+    }
     /* About Page */
     .company-info {
       padding: 20px;
@@ -1260,9 +1276,39 @@ text-align: center;
 
 @media (max-width: 768px) {
 
-  
+    .home {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      padding: 0;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    .home video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      z-index: -1;
+    }
+
+    .overlay {
+      height: 100vh;
+    }
+
     html,
     body {
+      overflow: hidden;
+      height: 100%;
+      width: 100%;
+      position: fixed;
       scroll-padding-top: 10px; 
     }
 
