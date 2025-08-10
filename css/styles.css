@@ -1303,12 +1303,15 @@ text-align: center;
       height: 100vh;
     }
 
+    body.home-page {
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+  }
+
     html,
     body {
-      overflow: hidden;
-      height: 100%;
-      width: 100%;
-      position: fixed;
       scroll-padding-top: 10px; 
     }
 
