@@ -1,10 +1,10 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Kumar+One&display=swap');
 
 :root {
   --primary-color: #013c58;
-  --primary-color-light: #3a9ecc;
+  --primary-color-light: #67bbe3;
   --primary-color-lightest: #e9f6ff;
   --primary-color-dark: #002130;
   --secondary-color: #f5a201;
@@ -96,9 +96,9 @@ section.home {
 
 /* NAVBAR */
 .navbar {
-  background-color: var(--primary-color-light);
+  background-color: var(--primary-color);
   color: var(--secondary-color-lightest);
-  height: 4.5rem;
+  height: 5rem;
   position: fixed;
   top: 0;
   left: 0;
@@ -114,8 +114,12 @@ section.home {
 
 .navbar .logo{
   position: absolute;
-  left: 60px;
+  left: 75px;
   top: 15px;
+  font-family: 'Kumar One', sans-serif;
+  font-size: 2.3rem;
+  font-weight: 400;
+  color: var(--secondary-color);
 }
 .navbar .fa-fire {
   position: absolute;
@@ -123,9 +127,17 @@ section.home {
   top: 35px;
 }
 
+.navbar .logo-img {
+  width: 50px;
+  height: auto;
+  position: absolute;
+  left: 15px;
+  top: 15px;
+}
+
 .navigation {
   position: absolute;
-  top: 20px;
+  top: 25px;
   right: 10px;
 }
 
@@ -320,28 +332,23 @@ footer {
   flex-direction: column;
   align-items: center;
   margin-top: 20px;
-  padding: 20px;
   text-align: center;
 }
 
 .about-us .title h1 {
-  color: var(--primary-color-lightest);
   text-align: center;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
 
 .about-us .title p {
-  color: var(--primary-color-lightest);
   text-align: center;
   max-width: 800px;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
 }
 
 .company-info {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin: 80px 0px 0px 0px;
+  margin: 30px 0px 0px 0px;
   padding: 40px 0px 0px 0px;
   width: 100vw;
   z-index: 1;
@@ -1016,14 +1023,24 @@ text-align: center;
 
 
   @media (max-width: 1068px) {
+
+
+    html,
+    body {
+      scroll-padding-top: 10px; 
+    }
+
     .home-img {
       display: none;
     }
+   
 
-    .logo {
+    .navbar .logo-img {
+      width: 35px;
+      height: auto;
+      position: absolute;
+      left: 10px;
       top: 10px;
-      left: 40px;
-      font-size: 1.5rem;
     }
 
     section {
@@ -1040,7 +1057,7 @@ text-align: center;
     }
 
     .navbar .logo {
-      left: 40px;
+      left: 55px;
       top: 10px;
       font-size: 1.5rem;
     }
@@ -1052,17 +1069,101 @@ text-align: center;
       font-size: 1.5rem;
     }
 
+    .navigation {
+      position: absolute;
+      top: 15px;
+      right: 10px;
+    }
 
     .navigation ul li a {
       font-size: 1rem;
     }
 
+    
 
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+
+    .footer-content {
+      padding: 20px 40px;
+    }
+    .footer-content .fab {
+      font-size: 1.2rem;
+      padding: 5px;
+    }
+
+    
+    /* About Page */
+    .company-info {
+      padding: 20px;
+      margin: 20px;
+    }
+    .company-info-item {
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    .company-info-item h2 {
+      font-size: 1.8rem;
+      margin: 0 10px;
+    }
+    
+    .company-info-item p {
+      font-size: 1rem;
+      margin: 0 10px;
+    }
+    .company-info-item h2,
+    .company-info-item p {
+      margin: 0 20px;
+      padding: 0 20px;
+    }
+    .team {
+      padding: 20px;
+      margin-top: 20px;
+    }
+    .team-members {
+      flex-direction: column;
+      align-items: center;
+    }
+    .team-member {
+      width: 90vw;
+      margin: 10px 0 40px 0;
+      padding: 20px;
+      }
+
+
+    .collaborators .logos,
+    .certifications .logos {
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+    }
+    .collaborator-logos img,
+    .certification-logos img {
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      filter: grayscale(0%);
+      height: 60px;
+    }
+
+    /* Services Page */
 
     .services {
       grid-template-columns: repeat(2, 1fr);
     }
+    
+    .services .service {
+      box-shadow: 0 10px 20px var(--primary-color-light);
+    }
 
+
+    /* Contact Page */
     .contact {
       flex-direction: column;
     }
@@ -1088,19 +1189,347 @@ text-align: center;
       padding: 30px 30px 20px;
     }
 
+    /* Projects Page */
+  .project {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+  }
+  
+  .project-left, 
+  .project-right {
+    width: 100%;
+    background: linear-gradient(to bottom, var(--secondary-color-lightest), var(--primary-color-light));
+    margin-bottom: 30px;
+    padding: 20px;
+    border-radius: 1rem;
+  }
+  
+  .slider-wrapper {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .project img {
+  width: 500px;
+  height: auto;
+  border-radius: 1rem;
+  align-self: center;
+  justify-self: center;
+  margin: 20px;
+  }
+
+  .project-left .slider-wrapper,
+  .project-right .slider-wrapper {
+    grid-row: auto;
+    grid-column: auto;
+    order: 1;
+  }
+  
+  .project-left h3,
+  .project-right h3 {
+    order: 2;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .project-left h4,
+  .project-right h4 {
+    order: 3;
+    text-align: center;
+  }
+  
+  .project-left p,
+  .project-right p {
+    order: 4;
+    width: 100%;
+    text-align: justify;
+    margin: 10px 0;
+  }
+  
+  .slider-nav {
+    bottom: 0.5rem;
+  }
+
+  .slider-nav a {
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+}
+
+
+@media (max-width: 768px) {
+
+  
+    html,
+    body {
+      scroll-padding-top: 10px; 
+    }
+
+    .home-img {
+      display: none;
+    }
+   
+
+    .navbar .logo-img {
+      width: 30px;
+      height: auto;
+      position: absolute;
+      left: 5px;
+      top: 10px;
+    }
+
+    section {
+      padding: 100px 40px;
+    }
+
+    .navbar {
+      font-size: 0.3rem;
+      height: 3.5rem;
+    }
+
+    .navbar .flex{
+      padding: 10px 40px;
+    }
+
+    .navbar .logo {
+      left: 45px;
+      top: 10px;
+      font-size: 1.5rem;
+    }
+  
+
+    .navigation {
+      position: absolute;
+      top: 15px;
+      right: 4px;
+    }
+
+    .navigation ul li a {
+      font-size: 0.8rem;
+      padding: 3px
+
+    }
+
+  .projects {
+    margin-top: 5px;
+    width: 100%;
+  }
+
+  .projects h1 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+
+  .projects p {
+    width: 90%;
+    font-size: 1rem;
+    margin-bottom: 15px;
+  }
+
+  .project {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    margin-bottom: 30px;
+    background: linear-gradient(to bottom, var(--secondary-color-lightest), var(--primary-color-light));
+    border-radius: 1rem;
+  }
+
+  .project-left, 
+  .project-right {
+    width: 100%;
+
+  }
+
+  .slider-wrapper {
+    max-width: 100%;
+    margin: 0 auto 20px;
+  }
+
+  .slider {
+    aspect-ratio: 16/9;
+  }
+
+  .project img {
+    width: 100%;
+    max-width: none;
+    height: auto;
+    margin: 0;
+    border-radius: 0.8rem;
+  }
+
+  .project h3 {
+    font-size: 1.5rem;
+    margin: 10px 0 5px;
+  }
+
+  .project h4 {
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+  }
+
+  .project p {
+    width: 100%;
+    font-size: 1rem;
+    margin: 0 0 15px 0;
+    text-align: left;
+  }
+
+  .slider-nav {
+    bottom: 0.8rem;
+  }
+
+  .slider-nav a {
+    width: 1.6rem;
+    height: 1.6rem;
+    margin: 0 3px;
+  }
+
+  /* Remove specific left/right layouts for mobile */
+  .project-left .slider-wrapper,
+  .project-right .slider-wrapper {
+    order: 1;
+  }
+
+  .project-left h3,
+  .project-right h3 {
+    order: 2;
+    text-align: center;
+  }
+
+  .project-left h4,
+  .project-right h4 {
+    order: 3;
+    text-align: center;
+  }
+
+  .project-left p,
+  .project-right p {
+    order: 4;
+  }
+
+  /*Services Page */
+  .services {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+
+}
+  @media (max-width: 600px) {
+    h1 {
+          margin: 20px 0;
+        font-size: 2rem;
+      } 
+
+    p {
+        font-size: 1rem;
+      }
+
+    section{
+      padding: 80px 20px;
+    }
+
+    .navbar .logo-img {
+      width: 20px;
+      height: auto;
+      position: absolute;
+      left: 5px;
+      top: 10px;
+    }
+
+    .navbar {
+      font-size: 0.3rem;
+      height: 2.5rem;
+    }
+
+    .navbar .flex{
+      padding: 10px 40px;
+    }
+
+    .navbar .logo {
+      left: 30px;
+      top: 7px;
+      font-size: 1rem;
+    }
+  
+
+    .navigation {
+      position: absolute;
+      top: 15px;
+      right: 2px;
+    }
+
+    .navigation ul li a {
+      font-size: 0.5rem;
+      font-weight: 600;
+      padding: 2px
+
+    }
+
+    /*Home Page */
+
+    .home {
+      padding: 50px 20px;
+      flex-direction: column;
+      align-items: center;
+    } 
+
+    .home video {
+      height: 100%;
+      width: auto;
+    }
+
+    .home .text h2 {
+      font-size: 2.5rem;
+    }
+    .home .text h3 {
+      font-size: 2rem;
+    }
+    .home .text p {
+      font-size: 1rem;
+      max-width: 90%;
+    }
+
+    .home .text a {
+      font-size: 0.8rem;
+      padding: 8px 20px;
+    }
+
     /* About Page */
+   
+    .about-us {
+      padding: 20px;
+    } 
+
+    .about-us .title h1 {
+      font-size: 2rem;
+    }
+
+    .about-us .title p {
+      font-size: 1rem;
+      max-width: 90%;
+    }
+
     .company-info {
-      padding: 20px 0 0 0;
-      margin: 40px 0 0 0;
+      padding: 20px;
+      margin: 20px;
     }
     .company-info-item {
       padding: 20px;
       margin-bottom: 20px;
     }
-    .company-info-item h2,
+    .company-info-item h2 {
+      font-size: 1.5rem;
+      margin: 0 10px;
+    }
     .company-info-item p {
-      margin: 0 20px;
-      padding: 0 20px;
+      font-size: 0.9rem;
+      margin: 0 10px;
+    }
+    .team {
+      padding: 20px;
+      margin-top: 20px;
     }
     .team-members {
       flex-direction: column;
@@ -1111,216 +1540,133 @@ text-align: center;
       margin: 10px 0 40px 0;
       padding: 20px;
     }
-    .collaborators .logos,
-    .certifications .logos {
-      flex-direction: column;
-      align-items: center;
-      gap: 20px;
+    .team-member img {
+      width: 150px;
+      height: 150px;
     }
-    .collaborator-logos img,
-    .certification-logos img {
-      height: 60px;
+    .team-member h3 {
+      font-size: 1.5rem;
+    }
+    .team-member h4 {
+      font-size: 1rem;
+    }
+    .team-member p {
+      font-size: 0.9rem;
     }
 
-    /* Projects Page */
-    .project {
+    .collaborators .logos,
+    .certifications .logos {  
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+    }   
+
+    .collaborator-logos img,
+    .certification-logos img {
+      height: 50px;
+      width: auto;
+      filter: grayscale(0%);
+    }
+
+    /* Services Page */
+    .services {
       grid-template-columns: 1fr;
       padding: 20px;
     }
-    .project img {
-      width: 90vw;
-      max-width: 400px;
-    }
-    .project-left .slider-wrapper,
-    .project-right .slider-wrapper {
-      grid-column: 1;
-      grid-row: 1;
-    }
-    .project-left h3,
-    .project-left h4,
-    .project-left p,
-    .project-right h3,
-    .project-right h4,
-    .project-right p {
-      grid-column: 1;
-    }
-  }
 
-  @media (max-width: 768px) {
-    /* General */
-    html, body {
-      font-size: 90%;
-    }
-    .navbar .flex,
-    .footer-content {
-      padding: 20px 20px;
-    }
-    .logo {
-      left: 20px;
-      font-size: 1.2rem;
-    }
-    section {
-      padding: 60px 10px;
-    }
-    h1 {
-      font-size: 2rem;
-      margin: 20px 0;
-    }
-    p {
-      font-size: 1rem;
-      max-width: 95vw;
-    }
-
-    /* Home */
-    .home {
-      padding: 60px 10px;
-      flex-direction: column;
-      align-items: center;
-      min-height: 80vh;
-    }
-    .text h2 {
-      font-size: 2.2em;
-    }
-    .text h3 {
-      font-size: 1.5em;
-    }
-
-    /* About */
-    .profile-photo,
-    .overlay {
-      height: 300px;
-    }
-    .about-us .title {
-      padding: 10px;
-      margin-top: 10px;
-    }
-    .company-info-item {
-      max-width: 98vw;
-      padding: 10px;
-    }
-    .team-member img {
-      width: 120px;
-      height: 120px;
-    }
-
-    /* Collaborators & Certifications */
-    .collaborators .logos,
-    .certifications .logos {
-      flex-direction: column;
-      gap: 10px;
-    }
-    .collaborator-logos img,
-    .certification-logos img {
-      height: 40px;
-    }
-
-    /* Services */
-    .services {
-      grid-template-columns: 1fr;
-      gap: 20px;
-    }
     .services .service {
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-      margin-top: 20px;
-      padding: 15px 10px;
+      box-shadow: 0 10px 20px var(--primary-color-light);
+      margin: 5px;
+      padding: 20px;
     }
 
-    /* Projects */
-    .projects p {
-      width: 98vw;
-    }
-    .project img {
-      width: 98vw;
-      max-width: 300px;
-      margin: 10px auto;
-    }
-    .slider-wrapper {
-      max-width: 98vw;
+    .services .service h2 {
+      font-size: 1.5rem;
     }
 
-    /* Contact */
-    .contact {
-      flex-direction: column;
-      gap: 20px;
-    }
-    .contact-form,
-    .contact-info {
-      width: 100%;
-      padding: 20px 10px 10px;
-      border-radius: 1rem;
+    .services .service i,
+    .services .service .fa,
+    .services .service .fas {
+      font-size: 1.5rem;
     }
 
-    /* Products */
+    .services .service p {
+      font-size: 0.8rem;
+    }
+
+    .services .service .btn {
+      font-size: 0.8rem;
+      padding: 8px 15px;
+    }
+
+    /*Products Page */
+
+    .product-page-title h1 {
+      font-size: 2rem;
+      margin: 1.5rem 1rem;
+    }
+
+    .product-page-title p {
+      font-size: 1rem;
+      padding: 0 1rem 1rem;
+    }
+
+    .product-sections {
+      gap: 2rem;
+      margin-bottom: 50px;
+    }
+
+    .product-piece {
+      padding-bottom: 2rem;
+    }
+
+    .product-title h1 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    /* Stack layout for mobile */
     .product-content.flex {
       flex-direction: column;
-      gap: 1rem;
-    }
-
-    .product-piece{
-      padding: 0px;
+      gap: 1.5rem;
     }
 
     .product-images {
-      width: 95vw;
-      gap: 0.5rem;
-      justify-content: center;
+      width: 100%;
+      flex-direction: column; /* Stack images vertically */
+      gap: 1rem;
     }
+
     .product-img {
-      width: 48vw;
-      height: 120px;
-      padding: 5px;
+      width: 100%;
+      height: auto;
+      max-height: 200px;
+      padding: 10px;
     }
+
     .product-description {
       width: 100%;
-      margin-top: 10px;
+      order: 2; /* Ensure text comes after images */
     }
-    .product-title h1 {
-      font-size: 1.2rem;
-      padding-bottom: 0.2rem;
-    }
-    .product-actions {
-      flex-direction: column;
-      gap: 0.5rem;
-      align-items: stretch;
-    }
-  }
 
-  @media (max-width: 480px) {
-    html, body {
-      font-size: 80%;
+    .product-actions {
+      flex-direction: column; /* Stack buttons vertically */
+      gap: 0.8rem;
+      justify-content: center;
+      margin-top: 1rem;
+      order: 3; /* Ensure buttons come last */
     }
-    .navbar {
-      height: 3rem;
+
+    .product-btn {
+      width: 100%;
+      padding: 0.7rem;
+      margin-top: 0;
     }
-    .navbar .logo {
-      left: 10px;
-      top: 5px;
-      font-size: 1rem;
+
+    /* Reduce hover effect on touch devices */
+    .product-img:hover {
+      transform: none;
     }
-    .footer-content {
-      flex-direction: column;
-      padding: 10px 5px;
-      gap: 10px;
-    }
-    .team-member {
-      padding: 10px;
-      border-radius: 20px;
-    }
-    .team-member img {
-      width: 80px;
-      height: 80px;
-    }
-    .project img {
-      max-width: 95vw;
-    }
-    .slider-wrapper {
-      max-width: 100vw;
-    }
-    .product-img {
-      width: 95vw;
-      height: 80px;
-    }
-    .product-title h1 {
-      font-size: 1rem;
-    }
+
   }
